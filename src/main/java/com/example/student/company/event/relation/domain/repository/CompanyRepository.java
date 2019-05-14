@@ -1,14 +1,9 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package com.example.student.company.event.relation.domain.repository;
 
-/**
- *
- * @author elzua
- */
+import com.example.student.company.event.relation.domain.model.Company;
+
 public interface CompanyRepository {
+    
+    public Company getCompanyById(String id);
     
 }
