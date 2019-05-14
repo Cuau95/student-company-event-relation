@@ -5,9 +5,11 @@
  */
 package com.example.student.company.event.relation.domain.repository;
 
+import com.example.student.company.event.relation.domain.model.StudentEventCompanyRelationEntity;
+import org.springframework.data.repository.CrudRepository;
 import org.springframework.stereotype.Repository;
 
 @Repository
-public interface StudentEventCompanyRelationRepository {
+public interface StudentEventCompanyRelationRepository extends CrudRepository<StudentEventCompanyRelationEntity, Integer> {
     
 }

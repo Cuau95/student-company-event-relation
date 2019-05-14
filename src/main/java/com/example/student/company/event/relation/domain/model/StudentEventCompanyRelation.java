@@ -1,14 +1,14 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package com.example.student.company.event.relation.domain.model;
 
-/**
- *
- * @author elzua
- */
-public class StudentEventCompanyRelation {
+import java.io.Serializable;
+import java.util.Date;
+
+public class StudentEventCompanyRelation implements Serializable{
+    
+    private int idRelacion;
+    private Student alumno;
+    private Company empresa;
+    private Event feriaEmpleo;
+    private Date fecha;
     
 }
