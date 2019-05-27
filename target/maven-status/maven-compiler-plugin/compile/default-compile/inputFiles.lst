@@ -12,6 +12,7 @@ C:\Users\elzua\Documents\NetBeansProjects\student-company-event-relation\src\mai
 C:\Users\elzua\Documents\NetBeansProjects\student-company-event-relation\src\main\java\com\example\student\company\event\relation\domain\repository\StudentEventCompanyRelationRepository.java
 C:\Users\elzua\Documents\NetBeansProjects\student-company-event-relation\src\main\java\com\example\student\company\event\relation\domain\repository\StudentRepository.java
 C:\Users\elzua\Documents\NetBeansProjects\student-company-event-relation\src\main\java\com\example\student\company\event\relation\infrastruture\repository\EventHttpClientRepository.java
+C:\Users\elzua\Documents\NetBeansProjects\student-company-event-relation\src\main\java\com\example\student\company\event\relation\domain\helper\StudentEventCompanyRelationServiceHelper.java
 C:\Users\elzua\Documents\NetBeansProjects\student-company-event-relation\src\main\java\com\example\student\company\event\relation\domain\service\StudentService.java
 C:\Users\elzua\Documents\NetBeansProjects\student-company-event-relation\src\main\java\com\example\student\company\event\relation\domain\service\CompanyService.java
 C:\Users\elzua\Documents\NetBeansProjects\student-company-event-relation\src\main\java\com\example\student\company\event\relation\domain\service\StudentEventCompanyRelationService.java

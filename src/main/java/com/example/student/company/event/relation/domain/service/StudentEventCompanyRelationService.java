@@ -1,5 +1,6 @@
 package com.example.student.company.event.relation.domain.service;
 
+import com.example.student.company.event.relation.domain.helper.StudentEventCompanyRelationServiceHelper;
 import com.example.student.company.event.relation.domain.model.Company;
 import com.example.student.company.event.relation.domain.model.Event;
 import com.example.student.company.event.relation.domain.model.Student;
@@ -8,6 +9,7 @@ import com.example.student.company.event.relation.domain.model.StudentEventCompa
 import com.example.student.company.event.relation.domain.repository.StudentEventCompanyRelationRepository;
 import java.util.Date;
 import java.util.List;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 @Service
@@ -17,12 +19,15 @@ public class StudentEventCompanyRelationService {
     private EventService eventService;
     private StudentService studentService;
     private StudentEventCompanyRelationRepository repository;
+    private StudentEventCompanyRelationServiceHelper relationHelper;
 
-    public StudentEventCompanyRelationService(CompanyService companyService, EventService eventService, StudentService studentService, StudentEventCompanyRelationRepository repository) {
+    @Autowired
+    public StudentEventCompanyRelationService(CompanyService companyService, EventService eventService, StudentService studentService, StudentEventCompanyRelationRepository repository, StudentEventCompanyRelationServiceHelper relationHelper) {
         this.companyService = companyService;
         this.eventService = eventService;
         this.studentService = studentService;
         this.repository = repository;
+        this.relationHelper = relationHelper;
     }
     
     public StudentEventCompanyRelation saveStudentEventCompanyRelation(
@@ -40,8 +45,8 @@ public class StudentEventCompanyRelationService {
         return relation;
     }
     
-    public void getRelationsByCompanyId(String idCompany) {
-        System.out.println(repository.findByIdEmpresa(idCompany).size());
+    public List<StudentEventCompanyRelation> getRelationsByCompanyId(String idCompany) {
+        return relationHelper.transformFromEntitytoModel(repository.findByIdEmpresa(idCompany));
     }
     
     private StudentEventCompanyRelationEntity saveRelation(Company company, Student student, Event event) {
@@ -65,7 +70,7 @@ public class StudentEventCompanyRelationService {
     }
 
     private Company getCompanyById(String id) {
-        return companyService.getcompanyById(id);
+        return companyService.getCompanyById(id);
     }
 
     private Event getEventById(String id) {

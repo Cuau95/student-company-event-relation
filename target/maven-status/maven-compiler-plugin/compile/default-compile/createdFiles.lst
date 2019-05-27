@@ -1,4 +1,5 @@
 com\example\student\company\event\relation\domain\model\Student$Campus.class
+com\example\student\company\event\relation\domain\helper\StudentEventCompanyRelationServiceHelper.class
 com\example\student\company\event\relation\domain\service\StudentEventCompanyRelationService.class
 com\example\student\company\event\relation\infrastruture\repository\StudentHttpClientRepository.class
 com\example\student\company\event\relation\domain\model\Student.class

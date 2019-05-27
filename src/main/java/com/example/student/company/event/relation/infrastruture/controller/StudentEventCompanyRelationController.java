@@ -2,11 +2,13 @@ package com.example.student.company.event.relation.infrastruture.controller;
 
 import com.example.student.company.event.relation.domain.model.StudentEventCompanyRelation;
 import com.example.student.company.event.relation.domain.service.StudentEventCompanyRelationService;
+import java.util.List;
 import org.springframework.http.HttpStatus;
 import static org.springframework.http.HttpStatus.NOT_FOUND;
 import static org.springframework.http.HttpStatus.OK;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -40,10 +42,11 @@ public class StudentEventCompanyRelationController {
         return new ResponseEntity<>(relationSaved, status);
     }
     
+    @CrossOrigin(origins = "http://localhost:4200")
     @GetMapping("/company/{idCompany}")
-    public ResponseEntity<String> getRelationByCompanyId(@PathVariable String idCompany){
-        service.getRelationsByCompanyId(idCompany);
-        return new ResponseEntity<>("nice", OK);
+    public ResponseEntity<List<StudentEventCompanyRelation>> getRelationByCompanyId(@PathVariable String idCompany){
+        List<StudentEventCompanyRelation> relationsFetched = service.getRelationsByCompanyId(idCompany);
+        return new ResponseEntity<>(relationsFetched, OK);
     }
     
 }

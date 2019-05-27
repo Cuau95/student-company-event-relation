@@ -15,7 +15,7 @@ public class CompanyService {
         this.companyRepository = companyRepository;
     }
     
-    public Company getcompanyById(String id) {
+    public Company getCompanyById(String id) {
         return companyRepository.getCompanyById(id);
     }
     
