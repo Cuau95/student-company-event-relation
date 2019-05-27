@@ -49,6 +49,10 @@ public class StudentEventCompanyRelationService {
         return relationHelper.transformFromEntitytoModel(repository.findByIdEmpresa(idCompany));
     }
     
+    public List<StudentEventCompanyRelation> getRelationsByStudentId(String idStudent) {
+        return relationHelper.transformFromEntitytoModel(repository.findByIdAlumno(idStudent));
+    }
+    
     private StudentEventCompanyRelationEntity saveRelation(Company company, Student student, Event event) {
         Date date =  new Date();
         StudentEventCompanyRelationEntity relation = new StudentEventCompanyRelationEntity();

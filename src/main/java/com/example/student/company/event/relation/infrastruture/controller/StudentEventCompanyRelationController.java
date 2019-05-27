@@ -49,4 +49,11 @@ public class StudentEventCompanyRelationController {
         return new ResponseEntity<>(relationsFetched, OK);
     }
     
+    @CrossOrigin(origins = "http://localhost:4200")
+    @GetMapping("/student/{idStudent}")
+    public ResponseEntity<List<StudentEventCompanyRelation>> getRelationByStudentId(@PathVariable String idStudent){
+        List<StudentEventCompanyRelation> relationsFetched = service.getRelationsByStudentId(idStudent);
+        return new ResponseEntity<>(relationsFetched, OK);
+    }
+    
 }

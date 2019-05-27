@@ -14,5 +14,6 @@ import org.springframework.stereotype.Repository;
 public interface StudentEventCompanyRelationRepository extends CrudRepository<StudentEventCompanyRelationEntity, Integer> {
     
     public List<StudentEventCompanyRelationEntity> findByIdEmpresa (String idCompany);
+    public List<StudentEventCompanyRelationEntity> findByIdAlumno (String idAlumno);
     
 }
