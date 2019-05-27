@@ -7,6 +7,7 @@ import static org.springframework.http.HttpStatus.NOT_FOUND;
 import static org.springframework.http.HttpStatus.OK;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -37,6 +38,12 @@ public class StudentEventCompanyRelationController {
             status = NOT_FOUND;
         }
         return new ResponseEntity<>(relationSaved, status);
+    }
+    
+    @GetMapping("/company/{idCompany}")
+    public ResponseEntity<String> getRelationByCompanyId(@PathVariable String idCompany){
+        service.getRelationsByCompanyId(idCompany);
+        return new ResponseEntity<>("nice", OK);
     }
     
 }

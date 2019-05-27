@@ -7,6 +7,7 @@ import com.example.student.company.event.relation.domain.model.StudentEventCompa
 import com.example.student.company.event.relation.domain.model.StudentEventCompanyRelationEntity;
 import com.example.student.company.event.relation.domain.repository.StudentEventCompanyRelationRepository;
 import java.util.Date;
+import java.util.List;
 import org.springframework.stereotype.Service;
 
 @Service
@@ -37,6 +38,10 @@ public class StudentEventCompanyRelationService {
             relation.setIdRelacion(relationSaved.getIdRelacion());
         }
         return relation;
+    }
+    
+    public void getRelationsByCompanyId(String idCompany) {
+        System.out.println(repository.findByIdEmpresa(idCompany).size());
     }
     
     private StudentEventCompanyRelationEntity saveRelation(Company company, Student student, Event event) {

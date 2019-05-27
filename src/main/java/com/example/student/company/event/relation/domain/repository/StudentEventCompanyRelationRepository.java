@@ -6,10 +6,13 @@
 package com.example.student.company.event.relation.domain.repository;
 
 import com.example.student.company.event.relation.domain.model.StudentEventCompanyRelationEntity;
+import java.util.List;
 import org.springframework.data.repository.CrudRepository;
 import org.springframework.stereotype.Repository;
 
 @Repository
 public interface StudentEventCompanyRelationRepository extends CrudRepository<StudentEventCompanyRelationEntity, Integer> {
+    
+    public List<StudentEventCompanyRelationEntity> findByIdEmpresa (String idCompany);
     
 }
